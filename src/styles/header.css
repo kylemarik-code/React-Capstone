@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
+
+header {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    background-color: grey;
+    font-family: "Karla", sans-serif;
+    align-items: center;
+    margin: 25px;
+}
+
+.Logo {
+    grid-column: 3;
+}
+
+nav {
+    display: grid;
+    grid-column: 5 / 11;
+    justify-self: end;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: nowrap;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.navbar-links a:hover {
+    background-color: blue;
+}
+
+.hamburger {
+    grid-column-end: 8;
+    display: none;
+    background-color: white;
+}
+
+@media (max-width: 962px) {
+    header {
+        padding: 25px 0px 25px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-links.show {
+        display: block;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-content: center;
+        display: none;
+    }
+
+    li {
+        padding: 5px;
+        align-self: center;
+    }
+
+    a {
+        padding: 5px;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: inline;
+        position: fixed;
+        top: 50px;
+        right: 50px;
+    }
+}
