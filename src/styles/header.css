@@ -47,9 +47,11 @@ nav {
 }
 
 .hamburger {
-    grid-column-end: 8;
     display: none;
     background-color: white;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 5px;
 }
 
 @media (max-width: 962px) {
@@ -69,9 +71,15 @@ nav {
         display: none;
     }
 
+    ul {
+        width: 100%;
+    }
+
     li {
         padding: 5px;
         align-self: center;
+        text-align: center;
+        width: 100%;
     }
 
     a {
@@ -82,7 +90,7 @@ nav {
     .hamburger {
         display: inline;
         position: fixed;
-        top: 50px;
-        right: 50px;
+        top: 40px;
+        right: 16.6%;
     }
 }

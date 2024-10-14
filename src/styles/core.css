@@ -206,17 +206,19 @@ p {
 
 .testimonials-container {
     grid-column: 3 / 11;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
     margin-top: 10px;
 }
 
 .blurb-card {
-    width: 33%;
+    grid-column: span 4;
     margin: 20px;
     background-color: var(--secondary-color-3);
     border-radius: 16px;
     text-align: center;
     padding: 15px;
+    justify-self: center;
 }
 
 .blurb-card p {
@@ -231,6 +233,7 @@ p {
 
 .about {
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .about-info-container {
@@ -264,7 +267,7 @@ p {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 0;
     background-color: var(--primary-color-1);
     padding: 30px;
     border-top: 3px solid var(--primary-color-2);
@@ -312,15 +315,55 @@ footer h6 {
 }
 
 @media (max-width: 962px) {
+    h1 {
+        line-height: 0.7;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .hero h1, .hero h2, .hero p {
+        grid-column: 2 / 12;
+    }
+
+    .hero a {
+        grid-column: 5 / 9;
+    }
+
     .cards-holder .card {
         grid-column: span 6;
     }
 
-    .about-images-container, .about-info-container {
-        grid-column: 3/11;
+    .blurb-card {
+        grid-column: span 6;
+    }
+
+    .about-images-container, .about-info-container, .testimonials-container {
+        grid-column: 2/12;
     }
 
     .blurb-card {
         width: 50%;
+    }
+    
+    footer article {
+        flex-wrap: wrap;
+    }
+
+    footer article section {
+        width: 100%;
+        text-align: center;
+        list-style-type: none;
+    }
+    .highlights h2 {
+        grid-column: 2 / 8;
+    }
+
+    .highlights a {
+        grid-column: 8/12;
+    }
+    .highlights .cards-holder {
+        grid-column: 2/12;
     }
 }
